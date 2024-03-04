@@ -1,10 +1,12 @@
-let nums = [1, 2, 2, 3, 4, 4, 5];
-let uniqueNums = [];
+// Lahendus 1
 
-for (let i = 0; i < nums.length; i++) {
-    if (!uniqueNums.includes(nums[i])) {
-        uniqueNums.push(nums[i]);
+let numbers = [1, 2, 2, 3, 4, 4, 5];
+let uniqueNumbers = [];
+
+for (let i = 0; i < numbers.length; i++) {
+    if (!uniqueNumbers.includes(numbers[i])) {
+        uniqueNumbers.push(numbers[i]);
     }
 }
 
-console.log(uniqueNums);
+console.log(uniqueNumbers);
