@@ -6,6 +6,12 @@ Siin repositooriumis lahendan ülesandeid loengute ajal ja siit repositooriumist
 
 Loengus loodud `.gitignore` fail on siin: [`.gitignore`](./.gitignore)
 
+## Loengutes kirjutatud kood
+
+- Neljas loeng (objektid):
+  - [Person objekt](./lessons/Objects/person.js)
+  - [Artiklite harjutused (Objektid massiivis)](lessons/Objects/articles.js)
+
 ## Lisaülesannete lahendused
 
 ### Tingimuslaused
