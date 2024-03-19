@@ -3,7 +3,7 @@
 // Kirjeldus: Antud on massiiv, mis sisaldab mitmeid objekte, iga objekt esindab ühte raamatut, millel on title, author ja read (boolean, mis näitab, kas raamat on loetud või mitte) omadused. Kirjutage kood, mis loendab, mitu raamatut on juba loetud ja mitu on veel lugemata.
 
 
-/* let books = [
+/* const books = [
     {
         title: 'The Hobbit',
         author: 'J.R.R. Tolkien',

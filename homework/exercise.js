@@ -1,5 +1,11 @@
-const letter = "Hello!"; 
+const student = {
+  name: 'John Doe',
+  age: 16,
+  class: 10
+};
 
-for (let c = 0; c < letter.length; c++) {
-    console.log(letter.charAt(c).repeat(c + 1)); // Ilma tühikuta ei loe H!
-}
+student.age = 18;
+
+student.subject = 'Matemaatika';
+
+console.log(student);
