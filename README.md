@@ -66,6 +66,7 @@ Loengus loodud `.gitignore` fail on siin: [`.gitignore`](./.gitignore)
 Kivi-paber-käärid mängu ülesanne on [siin](https://github.com/HK-Mikrokraadid/Veebiarendus/blob/main/Subjects/Programming-Basics/Topics/Modules-Third-Party/Exercises.md)
 
 - [Variant 1](https://github.com/HK-Mikrokraadid/Martti/tree/02186007cf910654bad0aa69edb8d9b7f789be3c/solutions/Rock-Paper-Scissors)
+- [Variant 2](https://github.com/HK-Mikrokraadid/Martti/tree/da88fb416a2e212e8de99f729b78229c18a521b9/solutions/Rock-Paper-Scissors)
 
 ### TODO rakendus
 

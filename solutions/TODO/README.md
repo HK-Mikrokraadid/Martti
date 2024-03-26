@@ -30,7 +30,7 @@ Rakendus on loodud demonstreerimaks NodeJS baasil rakenduse loomist ja moodulite
 
 ## Kasutatud tehnoloogiad
 
-<p align="center">
+<p align="left">
   <a href="https://skillicons.dev">
     <img src="https://skillicons.dev/icons?i=js,nodejs,npm,vscode,md,git,github" />
   </a>
