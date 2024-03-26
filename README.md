@@ -41,3 +41,30 @@ Loengus loodud `.gitignore` fail on siin: [`.gitignore`](./.gitignore)
   - [Elemendi Indeksi Leidmine](./solutions/Arrays/index.js)
   - [Duplikaatide Eemaldamine](./solutions/Arrays/duplicates.js)
   - [Massiivi Pööramine](./solutions/Arrays/reverse.js)
+
+### Objektid
+
+- Ülesannete kirjeldused on [siin](https://github.com/HK-Mikrokraadid/Veebiarendus/blob/main/Subjects/Programming-Basics/Topics/Data-Structures/Exercises-Objects.md)
+- Ülesannete ühed võimalikud lahendused:
+  - [Objekti loendamine](./solutions/Objects/countingKeys.js)
+  - [Objekti väärtuste summa](./solutions/Objects/sumOfValues.js)
+  - [Objekti elementide filtreerimine](./solutions/Objects/filterValues.js)
+  - [Objektide massiivist otsimine](./solutions/Objects/filterObjectFromArray.js)
+  - [Objektide ja massiivide kombineerimine](./solutions/Objects/objectsAndArrays.js)
+
+### Funktsioonid
+
+- Ülesannete kirjeldused on [siin](https://github.com/HK-Mikrokraadid/Veebiarendus/blob/main/Subjects/Programming-Basics/Topics/Functions/Exercises.md)
+  - [Ringi pindala](./solutions/Functions/circleArea.js)
+  - [Maksimaalse arvu leidmine](./solutions/Functions/maxNumber.js)
+  - [Sõnade arvu loendamine](./solutions/Functions/countWords.js)
+  - [Tähestiku sagedus massiivist](./solutions/Functions/letterFrequencyInWords.js)
+  - [Leia kõige pikem sõna stringis](./solutions/Functions/longestWordInString.js)
+
+### Moodulid
+
+Kivi-paber-käärid mängu ülesanne on [siin](https://github.com/HK-Mikrokraadid/Veebiarendus/blob/main/Subjects/Programming-Basics/Topics/Modules-Third-Party/Exercises.md)
+
+### TODO rakendus
+
+- [TODO rakendus](./solutions/TODO/README.md)
