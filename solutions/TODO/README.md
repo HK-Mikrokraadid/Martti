@@ -14,9 +14,9 @@ TODO rakendus on rakendus, mis võimaldab kasutajal hallata oma tegevusi.
 
 **Rakendus võimaldab kasutajal:**
 
-- tegemata tegevusi;
+- kuvada tegemata ja tehtud tegevusi;
 - lisada uusi tegevusi;
-- märkida tegevusi tehtuks;
+- märkida tegevusi tehtuks ja tehtud tegevusi tagasi tegemata olekusse;
 - tegevusi kustutada.
 
 Rakendus on loodud demonstreerimaks NodeJS baasil rakenduse loomist ja moodulite kasutamist.
