@@ -29,30 +29,35 @@ const availableChoices = [
 
 const points = {
   playerOne: 0,
-  playerTwo: 0,
+  computer: 0,
 };
 
 function displayPoints() {
   console.log('------ Hetke seis -------');
-  console.log('| Mängija 1 | Mängija 2 |');
+  console.log('| Mängija 1 | Arvuti |');
   console.log('|' + line(23) + '|');
-  console.log('|     ' + points.playerOne + '     |     ' + points.playerTwo + '     |');
+  console.log('|     ' + points.playerOne + '     |     ' + points.computer + '     |');
   console.log(line(25));
 }
 
-function detectWinner(userOneChoice, userTwoChoice) {
-  if (userOneChoice === userTwoChoice) {
+function detectWinner(userOneChoice, computerChoice) {
+  if (userOneChoice === computerChoice) {
     return messages.draw.green;
-  } else if (userOneChoice === '1' && userTwoChoice === '3' || userOneChoice === '2' && userTwoChoice === '1' || userOneChoice === '3' && userTwoChoice === '2') {
+  } else if (userOneChoice === '1' && computerChoice === '3' || userOneChoice === '2' && computerChoice === '1' || userOneChoice === '3' && computerChoice === '2') {
     points.playerOne++;
     return messages.playerOneWin.green;
   } else {
-    points.playerTwo++;
-    return messages.playerTwoWin.green;
+    points.computer++;
+    return messages.computerWin.green;
   }
 }
 
-// function to check if choice is valid
+function randomComputerChoice() {
+  const choicesCount = availableChoices.length - 2; // -2 because we don't want to include 'q'
+  const randomChoice = Math.floor(Math.random() * choicesCount) + 1;
+  return availableChoices[randomChoice].choice;
+}
+
 function isValidChoice(choice) {
   return availableChoices.some((item) => item.choice === choice);
 }
@@ -63,37 +68,37 @@ function getChoiceName(choice) {
 
 const pointsToWin = Number(prompt(messages.pointsToWin));
 
-while (points.playerOne < pointsToWin && points.playerTwo < pointsToWin) {
+while (points.playerOne < pointsToWin && points.computer < pointsToWin) {
   console.log(line(40));
   const userOneChoice = prompt(messages.playerOneChoice, { echo: '*'});
-  const userTwoChoice = prompt(messages.playerTwoChoice, { echo: '*'});
+  const computerChoice = randomComputerChoice();
   console.log(line(40));
 
-  if (!isValidChoice(userOneChoice) || !isValidChoice(userTwoChoice)) {
+  if (!isValidChoice(userOneChoice)) {
     console.log('Vigane valik!'.red);
     continue;
   }
 
   console.log(line(40));
-  console.log(userOneChoice, userTwoChoice);
+  console.log(userOneChoice, computerChoice);
   console.log(`Esimene mängija valis: ${getChoiceName(userOneChoice)}`);
-  console.log(`Teine mängija valis: ${getChoiceName(userTwoChoice)}`);
+  console.log(`Arvuti valis: ${getChoiceName(computerChoice)}`);
 
-  console.log(detectWinner(userOneChoice, userTwoChoice));
+  console.log(detectWinner(userOneChoice, computerChoice));
 
-  if (userOneChoice === 'q' || userTwoChoice === 'q') {
+  if (userOneChoice === 'q') {
     console.log('Mäng lõpetatud!'.bgRed.white);
     break;
   }
-  
+
   displayPoints();
 }
 
-if (points.playerOne > points.playerTwo) {
+if (points.playerOne > points.computer) {
   console.log(messages.playerOneWin.green);
-} else if (points.playerOne === points.playerTwo){
+} else if (points.playerOne === points.computer){
   console.log(messages.draw.green);
 } else {
-  console.log(messages.playerTwoWin.green);
+  console.log(messages.computerWin.green);
 }
 
