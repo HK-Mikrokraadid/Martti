@@ -67,6 +67,7 @@ Kivi-paber-käärid mängu ülesanne on [siin](https://github.com/HK-Mikrokraadi
 
 - [Variant 1](https://github.com/HK-Mikrokraadid/Martti/tree/02186007cf910654bad0aa69edb8d9b7f789be3c/solutions/Rock-Paper-Scissors)
 - [Variant 2](https://github.com/HK-Mikrokraadid/Martti/tree/f7f94ac37cd858e9c8492efc6ec5d92aebade768/solutions/Rock-Paper-Scissors)
+- [Variant 3](https://github.com/HK-Mikrokraadid/Martti/tree/76422c09c9a01d4a638d651156bbdb5def3faee2/solutions/Rock-Paper-Scissors)
 
 ### TODO rakendus
 
