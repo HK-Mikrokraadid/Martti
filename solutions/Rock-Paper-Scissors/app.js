@@ -8,7 +8,24 @@ function line(length) {
   return '-'.repeat(length);
 }
 
-const availableChoices = ['1', '2', '3', 'q'];
+const availableChoices = [
+  {
+    choice: '1',
+    name: 'Kivi',
+  },
+  {
+    choice: '2',
+    name: 'Paber',
+  },
+  {
+    choice: '3',
+    name: 'Käärid',
+  },
+  {
+    choice: 'q',
+    name: 'Lõpeta mäng',
+  },
+];
 
 const points = {
   playerOne: 0,
@@ -35,6 +52,15 @@ function detectWinner(userOneChoice, userTwoChoice) {
   }
 }
 
+// function to check if choice is valid
+function isValidChoice(choice) {
+  return availableChoices.some((item) => item.choice === choice);
+}
+
+function getChoiceName(choice) {
+  return availableChoices.find((item) => item.choice === choice).name;
+}
+
 const pointsToWin = Number(prompt(messages.pointsToWin));
 
 while (points.playerOne < pointsToWin && points.playerTwo < pointsToWin) {
@@ -43,17 +69,21 @@ while (points.playerOne < pointsToWin && points.playerTwo < pointsToWin) {
   const userTwoChoice = prompt(messages.playerTwoChoice, { echo: '*'});
   console.log(line(40));
 
-  if (!availableChoices.includes(userOneChoice) || !availableChoices.includes(userTwoChoice)) {
+  if (!isValidChoice(userOneChoice) || !isValidChoice(userTwoChoice)) {
     console.log('Vigane valik!'.red);
     continue;
   }
+
+  console.log(line(40));
+  console.log(userOneChoice, userTwoChoice);
+  console.log(`Esimene mängija valis: ${getChoiceName(userOneChoice)}`);
+  console.log(`Teine mängija valis: ${getChoiceName(userTwoChoice)}`);
 
   if (userOneChoice === 'q' || userTwoChoice === 'q') {
     console.log('Mäng lõpetatud!'.bgRed.white);
     break;
   }
-
-  console.log(detectWinner(userOneChoice, userTwoChoice));
+  
   displayPoints();
 }
 
