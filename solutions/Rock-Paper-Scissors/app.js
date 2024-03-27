@@ -79,6 +79,8 @@ while (points.playerOne < pointsToWin && points.playerTwo < pointsToWin) {
   console.log(`Esimene mängija valis: ${getChoiceName(userOneChoice)}`);
   console.log(`Teine mängija valis: ${getChoiceName(userTwoChoice)}`);
 
+  console.log(detectWinner(userOneChoice, userTwoChoice));
+
   if (userOneChoice === 'q' || userTwoChoice === 'q') {
     console.log('Mäng lõpetatud!'.bgRed.white);
     break;
