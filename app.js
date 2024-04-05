@@ -90,7 +90,7 @@ function pikimSona(str) {
   console.log(`Pikim sõna stringis on: "${longestWord}"`);
  */
 
-const usernames = ['Martti', 'Ain', 'Toomas', 'Aili'];
+/* const usernames = ['Martti', 'Ain', 'Toomas', 'Aili'];
 
 const username = 'Martti';
 
@@ -98,4 +98,78 @@ if (usernames.includes(username.trim())) {
     console.log('Oled sisse logitud');
 } else {
     console.log('Tundmatu kasutaja');
+} */
+
+/* function test() {
+    return {
+      javascript: "fantastic"
+    };
+  }
+  
+  const r = test();
+  try {
+    console.log(r.javascript); 
+  } catch (e) {
+    console.log('no - it broke: ' + typeof r);
+  }
+
+
+  console.log(`
+  Rida 1,
+  Rida 2,
+  Rida 3,
+  `); */
+
+/*   function cube(number) {
+    return Math.pow(number, 3);
+  } */
+
+/* const first = 'kivi';
+const second = 'käärid';
+
+if (first === second) {
+    console.log('viik');
+} else if (
+    first === 'kivi' && second === 'käärid' ||
+    first === 'käärid' && second === 'paber' ||
+    first === 'paber' && second === 'kivi') {
+    fistPoints ++;
+} else {
+    secondPoints ++;
+} */
+
+/* console.log('esimene rida,\nteine rida,\nkolmas rida'); */
+
+/* console.log(`
+esimene rida,
+teine rida,
+kolmas rida
+`); */
+
+/* function test() {
+    return {
+            javascript: "fantastic"
+        };
 }
+  
+const r = test();
+
+console.log(r); */
+
+// console.log(r.javascript);
+
+/* function helloWorld() {
+    return 'Hello World!';
+}
+
+console.log(helloWorld());
+
+ */
+
+const age = 20;
+
+console.log('Vanus on ' + age);
+console.log('Vanus on', age);
+console.log(`Vanus on ${age}`);
+
+const string = 'midagi';

@@ -11,7 +11,7 @@ const objs = [
   }
 ];
 
-const newFile = 'users.json';
+const newFile = 'users.txt';
 const content = JSON.stringify(objs, null, 2);
 fs.writeFileSync(newFile, content, 'utf-8');
 
