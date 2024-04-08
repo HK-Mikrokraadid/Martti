@@ -1,8 +1,9 @@
-const fs = require("fs");
-const { v4: uuidv4 } = require("uuid");
-const filePath = "./todos.json";
+const fs = require('fs');
+const { v4: uuidv4 } = require('uuid');
 
-const loadFile = function(file) {
+const filePath = './todos.json';
+
+const loadFile = function (file) {
   try {
     const data = fs.readFileSync(file);
     return JSON.parse(data);
@@ -11,7 +12,7 @@ const loadFile = function(file) {
   }
 };
 
-const saveFile = function(file, data) {
+const saveFile = function (file, data) {
   try {
     fs.writeFileSync(file, JSON.stringify(data));
   } catch (error) {
@@ -28,7 +29,7 @@ function getTodos() {
 function addTodo(title) {
   const todo = {
     id: uuidv4(),
-    title: title,
+    title,
     isDone: false,
   };
   todos.push(todo);
@@ -54,5 +55,6 @@ function deleteTodo(index) {
   return true;
 }
 
-
-module.exports = { getTodos, addTodo, toggleTodo, deleteTodo };
+module.exports = {
+  getTodos, addTodo, toggleTodo, deleteTodo,
+};

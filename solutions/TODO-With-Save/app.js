@@ -1,4 +1,5 @@
 // Easy TODO app with Node.js
+// eslint-disable-next-line no-unused-vars
 const colors = require('colors');
 
 // Importing messages
@@ -17,19 +18,24 @@ while (true) {
   const choice = mainMenu();
   console.clear();
 
-  if (choice === '1') { // Show list
+  if (choice === '1') {
+    // Show list
     showList();
-  } else if (choice === '2') { // Add
+  } else if (choice === '2') {
+    // Add
     addMenu();
-  } else if (choice === '3') { // Toggle
+  } else if (choice === '3') {
+    // Toggle
     showList();
     toggleMenu();
     showList();
-  } else if (choice === '4') { // Delete
+  } else if (choice === '4') {
+    // Delete
     showList();
     deleteMenu();
     showList();
-  } else if (choice === '5') { // Exit
+  } else if (choice === '5') {
+    // Exit
     console.log(messages.ending);
     break;
   } else {

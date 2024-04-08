@@ -1,0 +1,4 @@
+esimene
+teine
+kolmas
+quit

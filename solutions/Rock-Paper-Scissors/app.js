@@ -1,4 +1,6 @@
+/* eslint-disable no-console */
 const prompt = require('prompt-sync')();
+// eslint-disable-next-line no-unused-vars
 const colors = require('colors');
 const messages = require('./messages');
 
@@ -35,21 +37,22 @@ const points = {
 function displayPoints() {
   console.log('------ Hetke seis -------');
   console.log('| Mängija 1 | Arvuti |');
-  console.log('|' + line(23) + '|');
-  console.log('|     ' + points.playerOne + '     |     ' + points.computer + '     |');
+  console.log(`|${line(23)}|`);
+  console.log(`|     ${points.playerOne}     |     ${points.computer}     |`);
   console.log(line(25));
 }
 
 function detectWinner(userOneChoice, computerChoice) {
   if (userOneChoice === computerChoice) {
     return messages.draw.green;
-  } else if (userOneChoice === '1' && computerChoice === '3' || userOneChoice === '2' && computerChoice === '1' || userOneChoice === '3' && computerChoice === '2') {
-    points.playerOne++;
+  } if ((userOneChoice === '1' && computerChoice === '3')
+        || (userOneChoice === '2' && computerChoice === '1')
+        || (userOneChoice === '3' && computerChoice === '2')) {
+    points.playerOne += 1;
     return messages.playerOneWin.green;
-  } else {
-    points.computer++;
-    return messages.computerWin.green;
   }
+  points.computer += 1;
+  return messages.computerWin.green;
 }
 
 function randomComputerChoice() {
@@ -70,13 +73,12 @@ const pointsToWin = Number(prompt(messages.pointsToWin));
 
 while (points.playerOne < pointsToWin && points.computer < pointsToWin) {
   console.log(line(40));
-  const userOneChoice = prompt(messages.playerOneChoice, { echo: '*'});
+  const userOneChoice = prompt(messages.playerOneChoice, { echo: '*' });
   const computerChoice = randomComputerChoice();
   console.log(line(40));
 
   if (!isValidChoice(userOneChoice)) {
     console.log('Vigane valik!'.red);
-    continue;
   }
 
   console.log(line(40));
@@ -96,9 +98,8 @@ while (points.playerOne < pointsToWin && points.computer < pointsToWin) {
 
 if (points.playerOne > points.computer) {
   console.log(messages.playerOneWin.green);
-} else if (points.playerOne === points.computer){
+} else if (points.playerOne === points.computer) {
   console.log(messages.draw.green);
 } else {
   console.log(messages.computerWin.green);
 }
-
