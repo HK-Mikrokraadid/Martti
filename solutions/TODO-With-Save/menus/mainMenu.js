@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const prompt = require('prompt-sync');
 const showLine = require('./showLine');
 
@@ -26,8 +27,9 @@ const menuItems = [
   },
 ];
 
-function createMainMenu(menuItems) {
+function createMainMenu() {
   let menuString = '';
+  // eslint-disable-next-line no-restricted-syntax
   for (const item of menuItems) {
     menuString += `| ${item.id} - ${item.title} `;
   }

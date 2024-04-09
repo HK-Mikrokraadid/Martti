@@ -1,4 +1,4 @@
-const todos = require("./todos");
+const todos = require('./todos');
 
 function getTodos() {
   return todos;
@@ -7,7 +7,7 @@ function getTodos() {
 function addTodo(title) {
   const todo = {
     id: todos.length + 1,
-    title: title,
+    title,
     isDone: false,
   };
   todos.push(todo);
@@ -15,7 +15,7 @@ function addTodo(title) {
 }
 
 function toggleTodo(id) {
-  for (let i = 0; i < todos.length; i++) {
+  for (let i = 0; i < todos.length; i += 1) {
     if (todos[i].id === id) {
       todos[i].isDone = !todos[i].isDone;
       return true;
@@ -25,7 +25,7 @@ function toggleTodo(id) {
 }
 
 function deleteTodo(id) {
-  for (let i = 0; i < todos.length; i++) {
+  for (let i = 0; i < todos.length; i += 1) {
     if (todos[i].id === id) {
       todos.splice(i, 1);
       return true;
@@ -34,5 +34,6 @@ function deleteTodo(id) {
   return false;
 }
 
-
-module.exports = { getTodos, addTodo, toggleTodo, deleteTodo };
+module.exports = {
+  getTodos, addTodo, toggleTodo, deleteTodo,
+};

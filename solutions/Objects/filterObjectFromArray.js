@@ -7,15 +7,16 @@
 const people = [
   { name: 'John', age: 25 },
   { name: 'Mary', age: 31 },
-  { name: 'Chris', age: 16 }
+  { name: 'Chris', age: 16 },
 ];
 
 let oldestPerson = people[0]; // Loob muutuja, kuhu salvestatakse kõige vanema inimese objekt
 
-for (let i = 1; i < people.length; i++) {
+for (let i = 1; i < people.length; i += 1) {
+  // eslint-disable-next-line max-len
   if (people[i].age > oldestPerson.age) { // Kontrollib, kas inimese vanus on suurem kui kõige vanema inimese vanus
     oldestPerson = people[i]; // Kui on, siis asendab kõige vanema inimese objekti uue objektiga
   }
 }
-
-console.log(`Kõige vanem inimene on: ${ oldestPerson.name }`); // Kuvab kõige vanema inimese nime
+// eslint-disable-next-line no-console
+console.log(`Kõige vanem inimene on: ${oldestPerson.name}`); // Kuvab kõige vanema inimese nime

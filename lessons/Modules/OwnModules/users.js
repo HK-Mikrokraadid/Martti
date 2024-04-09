@@ -1,11 +1,11 @@
 const users = [
   {
-    firstName: "John",
-    lastName: "Doe",
+    firstName: 'John',
+    lastName: 'Doe',
   },
   {
-    firstName: "Jane",
-    lastName: "Doe",
+    firstName: 'Jane',
+    lastName: 'Doe',
   },
 ];
 

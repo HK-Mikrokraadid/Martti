@@ -28,16 +28,16 @@ const articles = [
 // Lisa omadus tähemärkide arv
 // Väljasta tähemärkide arv kokku mingi teema artiklite kohta
 
-let keyword = 'Kool';
+const keyword = 'Kool';
 let sum = 0;
 
-for (let i = 0; i < articles.length; i++) {
+for (let i = 0; i < articles.length; i += 1) {
   if (articles[i].keywords.includes(keyword)) {
     // console.log(articles[i].title, articles[i].countOfLetters);
     sum += articles[i].content.length;
   }
 }
-
+// eslint-disable-next-line no-console
 console.log(sum);
 
 /* for (let i = 0; i < articles.length; i++) {
@@ -49,8 +49,6 @@ console.log(sum);
   }
 }
  */
-
-
 
 /* for (let i = 0; i < articles.length; i++) {
   if (articles[i].author === 'John Doe') {

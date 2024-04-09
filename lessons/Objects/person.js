@@ -9,4 +9,5 @@ const person = {
   },
 };
 
+// eslint-disable-next-line no-console
 console.log(person.roles[1]);

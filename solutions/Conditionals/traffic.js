@@ -3,14 +3,15 @@ const traffic = 'ummik';
 
 let speed;
 
-if (traffic === 'normaalne'){
+if (traffic === 'normaalne') {
   speed = 50;
-} else if (traffic ==='väga tihe'){
+} else if (traffic === 'väga tihe') {
   speed = 30;
-} else if (traffic ==='ummik'){
+} else if (traffic === 'ummik') {
   speed = 10;
 }
 
-let time = distance / speed;
+const time = distance / speed;
 
-console.log('Umbkaudseks ajaks kulub ' + time + ' tundi.');
+// eslint-disable-next-line no-console
+console.log(`Umbkaudseks ajaks kulub ${time} tundi.`);

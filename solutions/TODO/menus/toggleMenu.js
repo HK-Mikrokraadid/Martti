@@ -1,5 +1,6 @@
-const messages = require('../messages');
+/* eslint-disable no-console */
 const prompt = require('prompt-sync');
+const messages = require('../messages');
 const todoService = require('../todoService');
 
 const pr = prompt();

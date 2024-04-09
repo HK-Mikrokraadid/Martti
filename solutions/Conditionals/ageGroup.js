@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const age = 13;
 
 if (age < 13) {
@@ -9,4 +10,3 @@ if (age < 13) {
 } else {
   console.log('Seenior');
 }
-

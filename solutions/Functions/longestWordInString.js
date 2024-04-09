@@ -4,19 +4,19 @@
 // Kui on mitu sama pikkusega kõige pikemat sõna, tagasta esimene selline sõna.
 
 function findLongestWord(sentence) {
-    const words = sentence.split(' ');
+  const words = sentence.split(' ');
 
-    let longestWord = words[0];
+  let longestWord = words[0];
 
-    for (let i = 1; i < words.length; i ++) {
-        if (words[i].length > longestWord.length) {
-            longestWord = words[i];
-        }
+  for (let i = 1; i < words.length; i += 1) {
+    if (words[i].length > longestWord.length) {
+      longestWord = words[i];
     }
+  }
 
-    return longestWord;
+  return longestWord;
 }
 
-const sentence = "JavaScript on väga võimas programmeerimiskeel";
-
+const sentence = 'JavaScript on väga võimas programmeerimiskeel';
+// eslint-disable-next-line no-console
 console.log(findLongestWord(sentence));

@@ -1,4 +1,6 @@
 // Easy TODO app with Node.js
+/* eslint-disable no-console */
+// eslint-disable-next-line no-unused-vars
 const colors = require('colors');
 
 // Importing messages
@@ -13,6 +15,7 @@ const deleteMenu = require('./menus/deleteMenu');
 // Importing showList of todos
 const showList = require('./showList');
 
+// eslint-disable-next-line no-constant-condition
 while (true) {
   const choice = mainMenu();
   console.clear();

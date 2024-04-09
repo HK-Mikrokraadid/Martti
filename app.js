@@ -1,7 +1,9 @@
 // 6. loeng
 
-// Kirjeldus: Antud on massiiv, mis sisaldab mitmeid objekte, iga objekt esindab ühte raamatut, millel on title, author ja read (boolean, mis näitab, kas raamat on loetud või mitte) omadused. Kirjutage kood, mis loendab, mitu raamatut on juba loetud ja mitu on veel lugemata.
-
+// Kirjeldus: Antud on massiiv, mis sisaldab mitmeid objekte,
+// iga objekt esindab ühte raamatut, millel on title, author ja
+// read (boolean, mis näitab, kas raamat on loetud või mitte) omadused.
+// Kirjutage kood, mis loendab, mitu raamatut on juba loetud ja mitu on veel lugemata.
 
 /* const books = [
     {
@@ -22,11 +24,11 @@
 ];
 
 let isRead = 0;
-  
+
 for (let i = 0; i < books.length; i++) {
     const book = books[i];
     if(book.read) {
-        isRead = isRead + 1;  
+        isRead = isRead + 1;
     }
 }
 
@@ -34,7 +36,8 @@ console.log('Loetud: ', isRead);
 console.log('Lugemata: ', books.length - isRead);
  */
 
-// Kirjeldus: Kirjuta funktsioon circleArea, mis arvutab ringi pindala raadiuse põhjal. Ringi pindala arvutamise valem on πr². Kasuta Math.PI väärtust π jaoks.
+// Kirjeldus: Kirjuta funktsioon circleArea, mis arvutab ringi pindala raadiuse põhjal.
+// Ringi pindala arvutamise valem on πr². Kasuta Math.PI väärtust π jaoks.
 
 /* function circleArea(radius) {
     const area = Math.PI * radius * radius;
@@ -44,7 +47,9 @@ console.log('Lugemata: ', books.length - isRead);
 const result = circleArea(143);
 console.log(result); */
 
-// Kirjeldus: Kirjuta kood, mis võtab sisendiks stringi ja tagastab selles stringis leiduva kõige pikema sõna. Kui on mitu sama pikkusega kõige pikemat sõna, tagasta esimene selline sõna.
+// Kirjeldus: Kirjuta kood, mis võtab sisendiks stringi ja
+// tagastab selles stringis leiduva kõige pikema sõna.
+// Kui on mitu sama pikkusega kõige pikemat sõna, tagasta esimene selline sõna.
 
 /* const sentence = "JavaScript on väga võimas programmeerimiskeel";
 
@@ -65,27 +70,28 @@ function findLongestWord(sentence) {
 
 console.log(findLongestWord(sentence)); */
 
-
-/* // Kirjeldus: Kirjuta kood, mis võtab sisendiks stringi ja tagastab selles stringis leiduva kõige pikema sõna. Kui on mitu sama pikkusega kõige pikemat sõna, tagasta esimene selline sõna.
+/* // Kirjeldus: Kirjuta kood, mis võtab sisendiks stringi
+ja tagastab selles stringis leiduva kõige pikema sõna.
+    Kui on mitu sama pikkusega kõige pikemat sõna, tagasta esimene selline sõna.
 const str = "JavaScript on väga võimas programmeerimiskeel.";
 const longestWord = pikimSona(str);
 function pikimSona(str) {
- 
+
     const words = str.split(' ');
-  
+
     // Leiame sõnade pikkuste massiivi
     const wordLengths = words.map(word => word.length);
-  
+
     // Leiame pikima sõna pikkuse
     const maxWordLength = Math.max(...wordLengths);
-  
+
     // Leiame esimese esinemisjuhu, kus sõna pikkus on maksimaalne
     const longestWordIndex = wordLengths.findIndex(length => length === maxWordLength);
-  
+
     // Tagastame pikima sõna
     return words[longestWordIndex];
   }
-  
+
   // Näide
   console.log(`Pikim sõna stringis on: "${longestWord}"`);
  */
@@ -105,14 +111,13 @@ if (usernames.includes(username.trim())) {
       javascript: "fantastic"
     };
   }
-  
+
   const r = test();
   try {
-    console.log(r.javascript); 
+    console.log(r.javascript);
   } catch (e) {
     console.log('no - it broke: ' + typeof r);
   }
-
 
   console.log(`
   Rida 1,
@@ -151,7 +156,7 @@ kolmas rida
             javascript: "fantastic"
         };
 }
-  
+
 const r = test();
 
 console.log(r); */
@@ -166,10 +171,28 @@ console.log(helloWorld());
 
  */
 
-const age = 20;
+/* const age = 20;
 
 console.log('Vanus on ' + age);
 console.log('Vanus on', age);
 console.log(`Vanus on ${age}`);
 
 const string = 'midagi';
+ */
+
+// eslint-disable-next-line no-unused-vars
+function callbackExample() {
+  // eslint-disable-next-line no-console
+  console.log('Callback function has been called!');
+}
+
+function greet(name, callback) {
+  // eslint-disable-next-line no-console
+  console.log(`Hello, ${name}!`);
+  callback();
+}
+
+greet('Martti', () => {
+  // eslint-disable-next-line no-console
+  console.log('Hello from callback function!');
+});

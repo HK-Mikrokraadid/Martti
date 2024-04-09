@@ -11,5 +11,5 @@ function circleArea(radius) {
 const radius = 2;
 
 const result = circleArea(radius);
-
+// eslint-disable-next-line no-console
 console.log(result);

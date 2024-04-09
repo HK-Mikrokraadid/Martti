@@ -1,5 +1,10 @@
-const usersService = require("./usersService");
+/* eslint-disable no-console */
+const usersService = require('./usersService');
 
 const users = usersService.getUsers();
 
-const user = usersService.getUserByFirstName("John");
+console.log(users);
+
+const user = usersService.getUserByFirstName('John');
+
+console.log(user);

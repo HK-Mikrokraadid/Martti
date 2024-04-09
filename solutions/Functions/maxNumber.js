@@ -1,13 +1,15 @@
+/* eslint-disable no-console */
 // Maksimaalse Arvu Leidmine
 
-// Kirjuta funktsioon `findMax`, mis võtab parameetrina arvude massiivi ja tagastab nende seast suurima.
+// Kirjuta funktsioon `findMax`, mis võtab parameetrina arvude massiivi
+// ja tagastab nende seast suurima.
 
 function findMax(numbersArray) {
   let max = numbersArray[0];
-  for (let i = 1; i < numbersArray.length; i++) {
-      if (numbersArray[i] > max) {
-          max = numbersArray[i];
-      }
+  for (let i = 1; i < numbersArray.length; i += 1) {
+    if (numbersArray[i] > max) {
+      max = numbersArray[i];
+    }
   }
   return max;
 }

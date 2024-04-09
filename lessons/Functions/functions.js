@@ -15,7 +15,7 @@ console.log(result); */
         const greeting = 'Hello ' + name + '!';
         return greeting;
     }
-    
+
 }
 
 const result = greet('Martti', 'te');
@@ -43,8 +43,8 @@ console.log(result);
         if (number2 !== 0) {
             const result = number1 / number2;
             return result;
-        } 
-        
+        }
+
         return 'Nulliga ei saa jagada';
     }
     return 'Tundmatu tehe';
@@ -55,16 +55,16 @@ console.log(result1);
  */
 
 function randomNumber(max) {
-    const random = Math.random() * max;
-    const rounded = Math.ceil(random);
-    return rounded;
+  const random = Math.random() * max;
+  const rounded = Math.ceil(random);
+  return rounded;
 }
 
 const results = [0, 0, 0, 0, 0, 0];
 
-for (let i = 0; i < 1000000; i++) {
-    const result = randomNumber(6);
-    results[result - 1] = results[result - 1] + 1;
+for (let i = 0; i < 1000000; i += 1) {
+  const result = randomNumber(6);
+  results[result - 1] = results[result - 1] + 1;
 }
-
+// eslint-disable-next-line no-console
 console.log(results);

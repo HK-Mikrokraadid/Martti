@@ -1,4 +1,4 @@
-const users = require("./users");
+const users = require('./users');
 
 function getUsers() {
   return users;
@@ -6,7 +6,7 @@ function getUsers() {
 
 function getUserByFirstName(firstName) {
   let foundUser;
-  for (let i = 0; i < users.length; i++) {
+  for (let i = 0; i < users.length; i += 1) {
     if (users[i].firstName === firstName) {
       foundUser = users[i];
     }

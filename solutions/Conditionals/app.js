@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /*
 Hinded
 Kirjuta programm, mis annab hindele kirjelduse. Programm peaks võtma hinnet (nt. 90, 75) ja:
@@ -24,7 +25,8 @@ if (points >= 90) {
 
 /*
 Liiklusfoori Värvid
-Kirjuta programm, mis simuleerib liiklusfoori tööd. Kasutaja sisestab värvi ("roheline", "kollane", "punane") ja programm:
+Kirjuta programm, mis simuleerib liiklusfoori tööd.
+Kasutaja sisestab värvi ("roheline", "kollane", "punane") ja programm:
 
 Trükib "Mine" kui värv on roheline.
 Trükib "Ole valmis" kui värv on kollane.
