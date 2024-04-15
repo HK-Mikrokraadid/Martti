@@ -8,9 +8,24 @@ Loengus loodud `.gitignore` fail on siin: [`.gitignore`](./.gitignore)
 
 ## Loengutes kirjutatud kood
 
-- Neljas loeng (objektid):
-  - [Person objekt](./lessons/Objects/person.js)
-  - [Artiklite harjutused (Objektid massiivis)](lessons/Objects/articles.js)
+- [Person objekt](./lessons/Objects/person.js)
+- [Artiklite harjutused (Objektid massiivis)](lessons/Objects/articles.js)
+- [Massiivid](./lessons/Arrays/arrays.js)
+- [Funktsioonid](./lessons/Functions/functions.js)
+- Massiivide meetodid
+  - [Map](./lessons/Arrays/map.js)
+  - [forEach](./lessons/Arrays/forEach.js)
+  - [filter](./lessons/Arrays/filter.js)
+  - [find](./lessons/Arrays/find.js)
+  - [reduce](./lessons/Arrays/reduce.js)
+  - [sort](./lessons/Arrays/sort.js)
+  - [includes](./lessons/Arrays/includes.js)
+- Moodulid
+  - [Isetehtud moodulid](./lessons/Modules/Own-Modules)
+  - [Sisseehitatud moodulid](./lessons/Modules/Built-In)
+  - [Kolmanda osapoole moodulid](./lessons/Modules/Third-Party-Modules)
+- [Async/Await](./lessons/Async-Await/Async)
+- [Kõiksugu muud loengutes tehtud harjutused](./app.js)
 
 ## Lisaülesannete lahendused
 
@@ -69,6 +84,15 @@ Kivi-paber-käärid mängu ülesanne on [siin](https://github.com/HK-Mikrokraadi
 - [Variant 2](https://github.com/HK-Mikrokraadid/Martti/tree/f7f94ac37cd858e9c8492efc6ec5d92aebade768/solutions/Rock-Paper-Scissors)
 - [Variant 3](https://github.com/HK-Mikrokraadid/Martti/tree/76422c09c9a01d4a638d651156bbdb5def3faee2/solutions/Rock-Paper-Scissors)
 
+### Failide lugemine ja kirjutamine
+
+Harjutuste kirjeldused on leitavad [siit](https://github.com/HK-Mikrokraadid/Veebiarendus/blob/main/Subjects/Programming-Basics/Topics/Modules-Built-In/README.md#harjutused)
+
+- [Sõna otsimine failist](./solutions/Text-From-File/searchFromFile.js)
+- [Statistika](./solutions/Text-From-File/statistics.js)
+- [Sõnade sorteerimine](./solutions/Text-From-File/sortWords.js)
+
 ### TODO rakendus
 
 - [TODO rakendus](./solutions/TODO/README.md)
+- [TODO rakendus koos faili salvestamisega](./solutions/TODO-With-Save/README.md)

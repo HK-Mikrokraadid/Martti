@@ -45,6 +45,7 @@ Rakendus on loodud demonstreerimaks NodeJS baasil rakenduse loomist ja moodulite
 - NodeJS
   - [Prompt-sync](https://www.npmjs.com/package/prompt-sync)
   - [Colors](https://www.npmjs.com/package/colors)
+  - `fs` moodul failide lugemiseks ja kirjutamiseks
 
 ## Käivitamine
 
@@ -58,6 +59,7 @@ Rakendus on loodud demonstreerimaks NodeJS baasil rakenduse loomist ja moodulite
 - `app.js` - rakenduse põhifail
 - `todo.js` - TODO 'andmebaas'
 - `todoService.js` - TODO rakenduse loogika
+- `todos.json` - TODO andmebaasi fail
 - `menus` - kaust, kus on rakenduse menüüd
   - `mainMenu.js` - rakenduse peamenüü
   - `addMenu.js` - TODO lisamise menüü

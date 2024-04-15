@@ -180,7 +180,7 @@ console.log(`Vanus on ${age}`);
 const string = 'midagi';
  */
 
-// eslint-disable-next-line no-unused-vars
+/* // eslint-disable-next-line no-unused-vars
 function callbackExample() {
   // eslint-disable-next-line no-console
   console.log('Callback function has been called!');
@@ -195,4 +195,4 @@ function greet(name, callback) {
 greet('Martti', () => {
   // eslint-disable-next-line no-console
   console.log('Hello from callback function!');
-});
+}); */
