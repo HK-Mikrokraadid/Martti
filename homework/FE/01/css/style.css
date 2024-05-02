@@ -1,0 +1,21 @@
+h1 {
+
+}
+
+article {
+  width: 70%;
+}
+
+.categories {
+  width: 30%;
+}
+
+.about {
+  width: 100%;
+  text-align: center;
+}
+
+footer {
+  width: 100%;
+  text-align: center;
+}
