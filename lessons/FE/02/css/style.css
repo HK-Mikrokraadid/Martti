@@ -15,12 +15,10 @@ footer {
 }
 
 .sidebar {
-  width: 30%;
   border: 1px solid #000;
 }
 
 .todos-list {
-  width: 70%;
   border: 1px solid #000;
 }
 

@@ -1,0 +1,54 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.red-border {
+    border: 1px solid red;
+}
+
+.black-border {
+    border: 1px solid black;
+}
+
+.menu {
+    justify-content: space-evenly;
+}
+
+.item {
+    flex: 1;
+    align-self: center;
+}
+
+.todo {
+    border: 1px solid blue;
+    padding: 5px;
+    margin: 5px;
+}
+
+#main-item {
+    flex: 2;
+}
+
+.center {
+    text-align: center;
+}
+
+.nav-element {
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.nav-element:hover {
+    background-color: lightgray;
+}
+
+img {
+    padding: 10px;
+}
+
+.highlighted {
+    background-color: gray;
+}
