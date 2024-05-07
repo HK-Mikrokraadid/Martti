@@ -1,0 +1,65 @@
+nav {
+  border: 1px solid #000;
+}
+
+img {
+  border: 1px solid #000;
+}
+
+footer {
+  text-align: center;
+}
+
+.container {
+  border: 1px solid #000;
+}
+
+.sidebar {
+  width: 30%;
+  border: 1px solid #000;
+}
+
+.todos-list {
+  width: 70%;
+  border: 1px solid #000;
+}
+
+.todo-item {
+  border: 1px solid #000;
+}
+
+.categories {
+  border: 1px solid #000;
+}
+
+.statuses {
+  border: 1px solid #000;
+}
+
+.category {
+
+}
+
+.due-date {
+
+}
+
+.headline {
+  text-align: center;
+}
+
+.done {
+
+}
+
+.delete {
+
+}
+
+.edit {
+
+}
+
+.add-todo-item {
+
+}
