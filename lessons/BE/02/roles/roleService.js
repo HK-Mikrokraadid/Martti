@@ -15,4 +15,9 @@ function getById(id) {
   return role;
 }
 
-module.exports = { getAll, getById };
+function create(newRole) {
+  roles.push(newRole);
+  return true;
+}
+
+module.exports = { getAll, getById, create };

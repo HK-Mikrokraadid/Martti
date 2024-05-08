@@ -1,3 +1,4 @@
+// Tegevuste 'andmebaas' ehk kõik olemasolevad tegevused
 const todos = [
   {
     id: 7,

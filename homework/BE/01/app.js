@@ -9,6 +9,7 @@ const app = express();
 
 const port = 3000;
 
+// '/' endpoint, mis tagastab API endpointide nimekirja
 app.get('/', (req, res) => res.status(200).json({
   success: true,
   message: 'API is running',
