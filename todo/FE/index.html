@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ee">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minu Blogi</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav>
+    <div class="nav-buttons">
+      <button class="nav-item" id="nav-main-page">Avaleht</button>
+      <button class="nav-item" id="nav-about-page">Rakendusest</button>
+    </div>
+    <div class="log-out">
+      <button class="nav-item" id="nav-log-out">Logi välja</button>
+    </div>
+    
+  </nav>
+  <h1 class="headline">TODO</h1>
+  <div class="container">
+    <div class="todos-list" id="todos-list">
+    </div>
+    <div class="sidebar">
+      <div class="categories" id="categories-list">
+        <h2>Kategooriad</h2>
+      </div>
+      <div class="statuses" id="statuses-list">
+        <h2>Staatused</h2>
+      </div>
+    </div>
+  </div>
+  <button class="add-todo" id="add-todo">Lisa uus tegevus</button>
+  <footer>
+    <p><strong>TODO rakendus - 2024</strong></p>
+  </footer>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="js/todos.js"></script>
+  <script src="js/categories.js"></script>
+  <script src="js/statuses.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

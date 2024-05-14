@@ -1,0 +1,125 @@
+body {
+  background-color: #f0f0f0;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.black-border {
+  border: 1px solid black;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: lightgrey;
+  padding: 10px;
+}
+
+.nav-item {
+  margin: 0 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
+}
+
+.nav-item:hover {
+  background-color: #f0f0f0;
+}
+
+.nav-buttons {
+  display: block;
+  justify-content: left;
+}
+
+.log-out {
+
+}
+
+img {
+  border: 1px solid #000;
+}
+
+footer {
+  text-align: center;
+}
+
+.container {
+  border: 1px solid #000;
+  display: flex;
+}
+
+.sidebar {
+  flex: 1;
+  border: 1px solid #000;
+}
+
+.todos-list {
+  flex: 3;
+  border: 1px solid #000;
+}
+
+.todo-item {
+  background-color: #9d9d9d;
+  margin: 5px;
+  padding: 5px;
+}
+
+.categories {
+  border: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  padding: 5px;
+}
+
+.statuses {
+  border: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  padding: 5px;
+}
+
+.status-item {
+  display: flex;
+  border: 1px solid #000;
+  margin: 5px;
+  padding: 5px;
+/*   vertical-align: middle; */
+}
+
+.category-item {
+  display: flex;
+  border: 1px solid #000;
+  margin: 5px;
+  padding: 5px;
+}
+
+.headline {
+  text-align: center;
+}
+
+.add-todo-item {
+
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+button {
+  margin: 0 5px;
+}
+
+.todo-heading {
+
+}
+
+.add-todo {
+  margin: 5px;
+}
+
+label {
+  margin-left: 5px;
+}
