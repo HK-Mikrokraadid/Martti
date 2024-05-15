@@ -15,6 +15,21 @@ const todoList = [
     content: 'Kolmas',
     date: new Date(),
   },
+  {
+    title: 'Pealkiri',
+    content: 'Kolmas',
+    date: new Date(),
+  },
+  {
+    title: 'Pealkiri',
+    content: 'Kolmas',
+    date: new Date(),
+  },
+  {
+    title: 'Pealkiri',
+    content: 'Kolmas',
+    date: new Date(),
+  },
 ];
 
 // Leiame veebilehelt vastava id-ga HTML elemendid

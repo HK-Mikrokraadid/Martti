@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrapi Näidis</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin: 20px;">
+    <a class="navbar-brand" href="#">Minu Veebileht</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Avaleht <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Funktsioonid</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Hinnakiri</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Kontakt</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+    <div class="container">
+      <h1>Tere tulemast Bootstrapi!</h1>
+      <p>See on lihtne näide.</p>
+      <button type="button" class="btn btn-primary">Vajuta mind</button>
+    </div>
+    <div class="container" style="margin: 20px;">
+      <div class="row border">
+        <div class="col-6 border">1. veerg</div>
+        <div class="col-6 border">2. veerg</div>
+      </div>
+      <div class="row">
+        <div class="col-4 border">1. veerg</div>
+        <div class="col-4 border">2. veerg</div>
+        <div class="col-4 border">3. veerg</div>
+      </div>
+      <div class="row" style="margin: 20px;">
+        <button type="button" class="btn btn-primary">Primaarne</button>
+        <button type="button" class="btn btn-secondary">Teisene</button>
+        <button type="button" class="btn btn-success">Edukas</button>
+        <button type="button" class="btn btn-danger">Ohtlik</button>
+        <button type="button" class="btn btn-warning">Hoiatus</button>
+        <button type="button" class="btn btn-info">Info</button>
+      </div>
+
+    <div class="row">
+      <form>
+        <div class="form-group">
+            <label for="name">Nimi:</label>
+            <input type="text" class="form-control" id="name">
+        </div>
+        <div class="form-group" id="email-group">
+            <label for="email">E-post:</label>
+            <input type="email" class="form-control" id="email">
+            <small class="form-text text-muted">Me ei jaga teie e-posti aadressi kellegagi.</small>
+        </div>
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="subscribe">
+            <label class="form-check-label" for="subscribe">Tellin uudiskirja</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Saada</button>
+    </form>
+    </div>
+  </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+.constainer {
+  border: 1px solid black;
+  display: flex;
+  position: relative;
+}
+
+.child {
+  display: inline-block;
+  height: 100px;
+  width: 100px;
+  border: 1px solid black;
+}
+
+.child-1 {
+  background-color: #0f0;
+  position: relative;
+  top: 20px;
+  left: 10px;
+}
+
+.child-2 {
+  background-color: #f00;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.child-3 {
+  background-color: #778899;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
