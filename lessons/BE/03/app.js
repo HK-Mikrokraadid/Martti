@@ -14,5 +14,5 @@ app.get('/cars/:id', carsController.getById);
 app.post('/cars', carsController.create);
 
 app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}/ping`);
+  console.log(`Server is running on http://localhost:${port}/ping`);
 });
