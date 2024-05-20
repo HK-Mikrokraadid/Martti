@@ -1,7 +1,6 @@
 const carsService = require('./carsService');
 
 const getAll = (req, res) => {
-    console.log(req.query);
     const year = Number(req.query.year);
     if(year) {
         const cars = carsService.getByYear(year);
@@ -21,12 +20,14 @@ const getAll = (req, res) => {
 
 const getById = (req, res) => {
     const id = Number(req.params.id);
-    if (isNaN(id)) {
+    // console.log(res.locals);
+    // Järgmist osa ei ole enam vaja, kuna see on nüüd vahevara sees
+/*     if (isNaN(id)) {
         return res.status(400).json({
             succes: false,
             message: 'Id must be a number',
         });
-    }
+    } */
     const car = carsService.getById(id);
     if (!car) {
         return res.status(404).json({
@@ -38,6 +39,7 @@ const getById = (req, res) => {
         success: true,
         message: `Car with id: ${id}`,
         car,
+        info: res.locals.message,
     });
 };
 
