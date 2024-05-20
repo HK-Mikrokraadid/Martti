@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO 2024</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            padding-top: 20px;
+        }
+        .container {
+            max-width: 900px;
+        }
+        .todo-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .todo-item span {
+            flex: 1;
+        }
+        .todo-item button {
+            margin-left: 10px;
+        }
+        .add-task {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        .add-task i {
+            font-size: 1.5rem;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="text-center mb-4">
+            <nav class="d-flex justify-content-between">
+                <div>
+                    <a href="#">Avaleht</a>
+                    <a href="#">About</a>
+                </div>
+                <div>
+                    <a href="#">Logout</a>
+                </div>
+            </nav>
+            <h1>TODO 2024</h1>
+        </header>
+        <div class="text-center mb-4">
+            <button class="btn btn-success add-task" onclick="addTask()">
+                <i class="fas fa-plus-circle"></i> Lisa
+            </button>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <section class="todo-list mb-4">
+                    <h2>Tegevused</h2>
+                    <div id="todo-container">
+                        <div class="todo-item p-2 border rounded mb-2">
+                            <span>Õpi uus programmeerimiskeel</span>
+                            <div>
+                                <button class="btn btn-sm btn-primary" onclick="editTask(this)">Muuda</button>
+                                <button class="btn btn-sm btn-danger" onclick="deleteTask(this)">Kustuta</button>
+                                <button class="btn btn-sm btn-success" onclick="markDone(this)">Done</button>
+                            </div>
+                        </div>
+                        <div class="todo-item p-2 border rounded mb-2">
+                            <span>Korista tuba</span>
+                            <div>
+                                <button class="btn btn-sm btn-primary" onclick="editTask(this)">Muuda</button>
+                                <button class="btn btn-sm btn-danger" onclick="deleteTask(this)">Kustuta</button>
+                                <button class="btn btn-sm btn-success" onclick="markDone(this)">Done</button>
+                            </div>
+                        </div>
+                        <div class="todo-item p-2 border rounded mb-2">
+                            <span>Mine jooksma</span>
+                            <div>
+                                <button class="btn btn-sm btn-primary" onclick="editTask(this)">Muuda</button>
+                                <button class="btn btn-sm btn-danger" onclick="deleteTask(this)">Kustuta</button>
+                                <button class="btn btn-sm btn-success" onclick="markDone(this)">Done</button>
+                            </div>
+                        </div>
+                        <div class="todo-item p-2 border rounded mb-2">
+                            <span>Osta toidukaupu</span>
+                            <div>
+                                <button class="btn btn-sm btn-primary" onclick="editTask(this)">Muuda</button>
+                                <button class="btn btn-sm btn-danger" onclick="deleteTask(this)">Kustuta</button>
+                                <button class="btn btn-sm btn-success" onclick="markDone(this)">Done</button>
+                            </div>
+                        </div>
+                        <div class="todo-item p-2 border rounded mb-2">
+                            <span>Kirjuta päevikut</span>
+                            <div>
+                                <button class="btn btn-sm btn-primary" onclick="editTask(this)">Muuda</button>
+                                <button class="btn btn-sm btn-danger" onclick="deleteTask(this)">Kustuta</button>
+                                <button class="btn btn-sm btn-success" onclick="markDone(this)">Done</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="col-md-4">
+                <section class="categories mb-4">
+                    <h2>Kategooriad</h2>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <input type="checkbox" id="category1">
+                            <label for="category1">Kool</label>
+                        </li>
+                        <li class="list-group-item">
+                            <input type="checkbox" id="category2">
+                            <label for="category2">Töö</label>
+                        </li>
+                        <li class="list-group-item">
+                            <input type="checkbox" id="category3">
+                            <label for="category3">Isiklik</label>
+                        </li>
+                    </ul>
+                </section>
+                <section class="statuses mb-4">
+                    <h2>Staatused</h2>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <input type="checkbox" id="status1" checked>
+                            <label for="status1">Aktivne</label>
+                        </li>
+                        <li class="list-group-item">
+                            <input type="checkbox" id="status2">
+                            <label for="status2">Tehtud</label>
+                        </li>
+                        <li class="list-group-item">
+                            <input type="checkbox" id="status3">
+                            <label for="status3">Kustutatud</label>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
