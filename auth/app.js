@@ -5,6 +5,7 @@ const usersRouter = require('./users/usersRoutes');
 const postsRouter = require('./posts/postsRoutes');
 const authRouter = require('./auth/authRoutes');
 const { isLoggedIn, isAdmin } = require('./auth/authMiddleware');
+const { notFound } = require('./general/generalMiddlewares');
 
 const app = express();
 
@@ -19,6 +20,8 @@ app.use(isLoggedIn);
 app.use('/posts', postsRouter);
 app.use(isAdmin);
 app.use('/users', usersRouter);
+
+app.use('*', notFound);
 
 app.listen(port, () => {
   // eslint-disable-next-line no-console

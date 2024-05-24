@@ -24,6 +24,12 @@ const isLoggedIn = async (req, res, next) => {
 
 const isAdmin = async (req, res, next) => {
   const { role } = res.locals.user;
+  if (!role) {
+    return res.status(401).json({
+      success: false,
+      message: 'You need to be logged in to access this route',
+    });
+  }
   if (role !== 'admin') {
     return res.status(403).json({
       success: false,
