@@ -10,6 +10,12 @@ const isLoggedIn = async (req, res, next) => {
   }
   try {
     const payload = await jwtService.verifyToken(token);
+    if (!payload) {
+      return res.status(401).json({
+        success: false,
+        message: 'Invalid token',
+      });
+    }
     res.locals.user = payload;
     return next();
   } catch (error) {
