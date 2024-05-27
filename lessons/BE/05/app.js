@@ -4,7 +4,7 @@ const notFound = require('./general/middlewares/notFound');
 const carsRouter = require('./cars/carsRoutes');
 const pingRouter = require('./general/pingRoutes');
 const usersRouter = require('./users/usersRoutes');
-
+const isLoggedIn = require ('./general/middlewares/isLoggedIn');
 const app = express();
 const port = 3000;
 
@@ -18,11 +18,16 @@ app.use(logger);
 // Ping teekonna registreerimine
 app.use('/ping', pingRouter);
 
+// Kasutajatega seotud teekondade registreerimine
+app.use('/users', usersRouter);
+
+// Registreerime isLoggedIn vahevara
+app.use(isLoggedIn);
+
 // Autodega seotud teekondade registreerimine
 app.use('/cars', carsRouter);
 
-// Kasutajatega seotud teekondade registreerimine
-app.use('/users', usersRouter);
+
 
 /*
 app.get('/users/:id', checkIfIdIsNumber) ...

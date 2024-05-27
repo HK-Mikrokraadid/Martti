@@ -1,5 +1,5 @@
 const users = require('./users');
-const hashService = require('../general/hashService');
+const hashService = require('../general/services/hashService');
 
 const getAll = () => users;
 

@@ -1,5 +1,6 @@
 const usersService = require('./usersService');
-const hashService = require('../general/hashService');
+const hashService = require('../general/services/hashService');
+const jwtService = require('../general/services/jwtService');
 
 const getAll = (req, res) => {
     const users = usersService.getAll();
@@ -51,9 +52,11 @@ const login = async (req, res) => {
             message: 'Wrong e-mail or password',
         });
     }
+    const token = jwtService.sign(user);
     return res.status(200).json({
         success: true,
         message: 'Logged in',
+        token,
     });
 };
 
