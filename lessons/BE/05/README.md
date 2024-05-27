@@ -1,0 +1,2 @@
+# Neljandas loengus kirjutatud kood
+
