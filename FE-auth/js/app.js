@@ -1,4 +1,4 @@
-const url = 'http://localhost:3000';
+const url = 'https://blog.hk.tlu.ee';
 
 const getTokenFromAPI = async (email, password) => {
   const response = await axios.post(`${url}/login`, { email, password });
@@ -20,4 +20,3 @@ const login = async (event) => {
 
   await getTokenFromAPI(email, password);
 };
-
