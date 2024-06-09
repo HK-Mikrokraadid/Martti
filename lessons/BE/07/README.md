@@ -1,0 +1,1 @@
+# Seitsmenda loengu kood
