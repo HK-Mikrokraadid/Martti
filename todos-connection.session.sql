@@ -55,7 +55,7 @@ INSERT INTO todos (user_id, title, description, is_done) VALUES
 (1, 'Go for a run', 'Run 5 kilometers in the morning', 1),
 (1, 'Write blog post', 'Write a new blog post about React hooks', 0),
 (1, 'Organize desk', 'Tidy up and organize the office desk', 0),
-(1, 'Buy birthday gift', 'Get a present for John\'s birthday', 0),
+(1, 'Buy birthday gift', 'Get a present for Johns birthday', 0),
 (1, 'Schedule doctor appointment', 'Book an appointment with the dentist', 1),
 (1, 'Attend meeting', 'Join the team meeting on Zoom', 0),
 (1, 'Check emails', 'Respond to all pending emails', 1),
@@ -118,4 +118,15 @@ UPDATE users SET firstName = 'John', lastName = 'Doe' WHERE id = 1;
 -- Kasutaja taastamine
 
 UPDATE users SET deleted_at = NULL WHERE id = 2;
+
+
+
+
+-- BLOG
+
+DROP SCHEMA blog;
+
+CREATE SCHEMA blog;
+
+USE blog;
 
