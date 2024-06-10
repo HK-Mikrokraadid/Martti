@@ -1,28 +1,69 @@
 /* eslint-disable no-param-reassign */
-const todos = require('./todos');
+const db = require('../db');
 
 // Kõikide todos-de toomine
-const getAll = () => todos;
-
-// Todo toomine ID järgi
-const getById = (id) => {
-  const todo = todos.find((t) => t.id === id);
-  return todo;
+const getAll = async () => {
+  try {
+    const result = await db.query('SELECT * FROM todos WHERE deleted_at IS NULL;');
+    return result[0];
+  } catch (error) {
+    console.log(error);
+    return null;
+  }
 };
 
-// Todos-de toomine vastavalt done olekule
-const getByDoneStatus = (done) => todos.filter((todo) => todo.done === done);
+// Todo toomine ID järgi
+const getById = async (id) => {
+  try {
+    const [result] = await db.query('SELECT * FROM todos WHERE id = ? AND deleted_at IS NULL;', [id]);
+    return result[0];
+  } catch (error) {
+    console.log(error);
+    return null;
+  }
+};
 
 // Uue todo loomine
-const create = (newTodo) => {
-  newTodo.id = todos.length + 1; // Automaatne ID määramine
-  todos.push(newTodo);
-  return newTodo;
+const create = async (newTodo) => {
+  try {
+    /* const [result] = await db.query(
+      'INSERT INTO todos SET user_id = ?, title = ?, description = ?;',
+      [newTodo.userId, newTodo.title, newTodo.description]
+    ); */
+    const [result] = await db.query('INSERT INTO todos SET ?;', [newTodo]);
+    return result.insertId;
+  } catch (error) {
+    console.log(error);
+    return null;
+  }
+};
+
+const deleteById = async (id) => {
+  try {
+    const [result] = await db.query('UPDATE todos SET deleted_at = NOW() WHERE id = ?;', [id]);
+    console.log(result);
+    return true;
+  } catch (error) {
+    console.log(error);
+    return false;
+  }
+};
+
+const update = async (id, todo) => {
+  try {
+    const [result] = await db.query('UPDATE todos SET ? WHERE id = ?;', [todo, id]);
+    console.log(result);
+    return true;
+  } catch (error) {
+    console.log(error);
+    return false;
+  }
 };
 
 module.exports = {
   getAll,
   getById,
-  getByDoneStatus,
   create,
+  deleteById,
+  update,
 };

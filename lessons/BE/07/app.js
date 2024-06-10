@@ -4,7 +4,7 @@ const notFound = require('./general/middlewares/notFound');
 const todosRouter = require('./todos/todosRoutes');
 const pingRouter = require('./general/pingRoutes');
 const usersRouter = require('./users/usersRoutes');
-// const isLoggedIn = require('./general/middlewares/isLoggedIn');
+const isLoggedIn = require('./general/middlewares/isLoggedIn');
 
 const app = express();
 const port = 3000;
@@ -23,7 +23,7 @@ app.use('/ping', pingRouter);
 app.use('/users', usersRouter);
 
 // Registreerime isLoggedIn vahevara
-// app.use(isLoggedIn);
+app.use(isLoggedIn);
 
 // Tegevustega seotud teekondade registreerimine
 app.use('/todos', todosRouter);

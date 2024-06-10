@@ -23,8 +23,8 @@
             "server": "localhost",
             "port": 3306,
             "driver": "MySQL",
-            "name": "blog",
-            "database": "blog",
+            "name": "todos",
+            "database": "todos",
             "username": "mrt",
             "askForPassword": true
         }

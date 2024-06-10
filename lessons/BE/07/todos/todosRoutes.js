@@ -6,10 +6,10 @@ const todosRouter = express.Router();
 
 // TODO-dega seotud teekonnad
 todosRouter.get('/', todosController.getAll);
-
 // Kontrollime, kas id on number
 todosRouter.get('/:id', checkIfIdIsNumber, todosController.getById);
-
 todosRouter.post('/', todosController.create);
+todosRouter.delete('/:id', checkIfIdIsNumber, todosController.deleteById);
+todosRouter.patch('/:id', checkIfIdIsNumber, todosController.update);
 
 module.exports = todosRouter;
