@@ -1,17 +1,21 @@
 const { createLogger, format, transports } = require('winston');
-const { combine, timestamp, printf, errors } = format;
+
+const {
+  combine, timestamp, printf, errors,
+} = format;
 
 // Kohandatud logi formaat
-const logFormat = printf(({ level, message, timestamp, stack }) => {
-  return `${timestamp} ${level}: ${stack || message}`;
-});
+const logFormat = printf(({
+  // eslint-disable-next-line no-shadow
+  level, message, timestamp, stack,
+}) => `${timestamp} ${level}: ${stack || message}`);
 
 const logger = createLogger({
   level: 'info', // Logi tase - info, error, warn, debug
   format: combine(
     timestamp(),
     errors({ stack: true }), // Logi veateated koos stack trace'iga
-    logFormat // Kohandatud logi formaat
+    logFormat, // Kohandatud logi formaat
   ),
   transports: [ // Transpordid - kuhu logitakse
     new transports.Console(), // Logi konsooli

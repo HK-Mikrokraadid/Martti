@@ -17,9 +17,9 @@ const verify = (token) => {
     const payload = jwt.verify(token, config.jwtSecret);
     return payload;
   } catch (error) {
-    // eslint-disable-next-line no-console
-    console.log(error.message);
-    return false;
+    error.message = 'Token is not valid';
+    error.code = 401;
+    throw error;
   }
 };
 
