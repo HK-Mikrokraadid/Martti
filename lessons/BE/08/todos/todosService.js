@@ -2,7 +2,7 @@ const db = require('../db');
 
 // Kõikide todos-de toomine
 
-// Siin me ei pea tegelikult try-catch kasutama, kuna nüüd püüab vea kinni errorHandler
+// Siin me ei pea tegelikult try-catchi kasutama, kuna nüüd püüab vea kinni errorHandler
 const getAll = async () => {
   const result = await db.query(`
     SELECT
