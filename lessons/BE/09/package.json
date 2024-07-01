@@ -1,0 +1,28 @@
+{
+  "name": "03",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "npx nodemon server.js",
+    "test": "cross-env NODE_ENV=test mocha --exit",
+    "coverage": "cross-env NODE_ENV=test nyc mocha --exit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "chai": "^4.4.1",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mocha": "^10.5.2",
+    "morgan": "^1.10.0",
+    "mysql2": "^3.10.0",
+    "nyc": "^17.0.0",
+    "supertest": "^7.0.0",
+    "winston": "^3.13.0"
+  }
+}
