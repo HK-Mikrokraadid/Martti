@@ -20,14 +20,19 @@ function NavBar() {
             <Nav.Link as={Link} to='/'>Home</Nav.Link>
             <Nav.Link as={Link} to='/posts'>Posts</Nav.Link>
             {
+              user && <Nav.Link as={Link} to='/posts/add'>Add Post</Nav.Link>
+            }
+            {
               user?.role === 'admin' &&  <Nav.Link as={Link} to='/users'>Users</Nav.Link>
             }
             <Nav.Link as={Link} to='/about'>About</Nav.Link>
+          </Nav>
+          <Nav className='ml-auto'>
             {user ? (
               <>
-                <Nav.Link>{user.email}</Nav.Link>
-                <Logout />
+                <Nav.Link>E-mail: {user.email}</Nav.Link>
                 <Nav.Link>Roll: {user.role}</Nav.Link>
+                <Logout />
               </>
             ) : (
               <Nav.Link as={Link} to='/login'>Login</Nav.Link>

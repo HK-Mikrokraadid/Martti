@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Form, Button, Container, Row, Col, Card, Alert } from 'react-bootstrap';
 import axios from 'axios';
 import { AuthContext } from './AuthContext';
+import config from '../config';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -15,14 +16,14 @@ const Login = () => {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post('https://blog.hk.tlu.ee/login', login);
+      const response = await axios.post(`${config.API_URL}/login`, login);
       // setUser(jwtDecode(response.data.token));
       // const user = jwtDecode(response.data.token);
       // localStorage.setItem('user', JSON.stringify(user));
       // localStorage.setItem('token', response.data.token);
       contextLogin(response.data.token);
       setMessage({
-        message: 'Oled edukalt sisse loginud',
+        message: 'Login successful! Redirecting to home page ...',
         variant: 'success',
       });
       setTimeout(() => {

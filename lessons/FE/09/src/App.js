@@ -9,6 +9,7 @@ import Posts from './components/Posts';
 import Users from './components/Users';
 import NotFound from './components/NotFound';
 import NavBar from './components/NavBar';
+import AddPost from './components/AddPost';
 import AuthProvider from './components/AuthContext';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
             <Route path='/about' element={<About />} />
             <Route path='/login' element={<Login />} />
             <Route path='/posts' element={<Posts />} />
+            <Route path='/posts/add' element={<AddPost />} />
             <Route path='/posts/:id' element={<PostPage />} />
             <Route path='/users' element={<Users />} />
             <Route path='*' element={<NotFound />} />

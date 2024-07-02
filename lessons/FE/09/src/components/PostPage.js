@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import { Container, Card } from 'react-bootstrap';
+import config from '../config';
 
 const PostPage = () => {
   const { id } = useParams();
@@ -13,7 +14,7 @@ const PostPage = () => {
     try {
       setLoading(true);
       const token = localStorage.getItem('token');
-      const response = await axios.get(`https://blog.hk.tlu.ee/posts/${id}`, {
+      const response = await axios.get(`${config.API_URL}/posts/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

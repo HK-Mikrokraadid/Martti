@@ -4,6 +4,7 @@ import axios from 'axios';
 import { Container, Col, Row } from 'react-bootstrap';
 import Post from './Post';
 import { AuthContext } from './AuthContext';
+import config from '../config';
 
 const Posts = () => {
   const navigate = useNavigate();
@@ -17,7 +18,7 @@ const Posts = () => {
   const fetchPosts = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get('https://blog.hk.tlu.ee/posts', {
+      const response = await axios.get(`${config.API_URL}/posts`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
