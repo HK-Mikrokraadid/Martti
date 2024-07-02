@@ -19,6 +19,11 @@ const getById = async (req, res, next) => {
   try {
     const id = Number(req.params.id);
     const user = await usersService.getById(id);
+    if (!user) {
+      const error = new Error('User not found');
+      error.code = 404;
+      throw error;
+    }
     return res.status(200).json({
       success: true,
       message: 'User by id',
@@ -36,6 +41,12 @@ const create = async (req, res, next) => {
     } = req.body;
     if (!firstName || !lastName || !email || !password) {
       const error = new Error('All fields are required');
+      error.code = 400;
+      throw error;
+    }
+    const user = await usersService.getByEmail(email);
+    if (user) {
+      const error = new Error('E-mail is already in use');
       error.code = 400;
       throw error;
     }
