@@ -6,6 +6,7 @@ const { setupTestDatabase } = require('../testDbSetup');
 
 let userToken;
 let adminToken;
+const nonexistentId = 999999;
 
 const user = {
     email: 'user@user.ee',
@@ -88,12 +89,12 @@ describe('Todos endpoint', async () => {
     });
     it('should return 404 if todo not found', async () => {
       const response = await request(app)
-        .get('/todos/999999')
+        .get(`/todos/${nonexistentId}`)
         .set('Authorization', `Bearer ${userToken}`);
 
       expect(response.status).to.equal(404);
       expect(response.body.success).to.be.false;
-      expect(response.body.message).to.equal('Todo with id: 999999 does not exist');
+      expect(response.body.message).to.equal(`Todo with id: ${nonexistentId} does not exist`);
     });
     it('should return 403 if user is not the owner of the todo', async () => {
       const response = await request(app)
@@ -123,12 +124,12 @@ describe('Todos endpoint', async () => {
     });
     it('should return 404 if todo not found', async () => {
       const response = await request(app)
-        .put('/todos/999999')
+        .patch(`/todos/${nonexistentId}`)
         .send({ title: 'This should fail' })
         .set('Authorization', `Bearer ${userToken}`);
       expect(response.status).to.equal(404);
       expect(response.body.success).to.be.false;
-      expect(response.body.message).to.equal('Not found');
+      expect(response.body.message).to.equal(`Todo with id: ${nonexistentId} does not exist`);
     });
     it('should return 403 if user is not the owner of the todo', async () => {
       const response = await request(app)
@@ -158,13 +159,22 @@ describe('Todos endpoint', async () => {
       expect(deletedTodo.status).to.equal(404);
     });
 
+    it('should return 403 if user is not the owner of the todo', async () => {
+      const response = await request(app)
+        .delete('/todos/5')
+        .set('Authorization', `Bearer ${userToken}`);
+      expect(response.status).to.equal(403);
+      expect(response.body.success).to.be.false;
+      expect(response.body.message).to.equal('You are not authorized to do this operation');
+    });
+
     it('should return 404 if todo not found', async () => {
       const response = await request(app)
-        .delete('/todos/999999')
+        .delete(`/todos/${nonexistentId}`)
         .set('Authorization', `Bearer ${userToken}`);
       expect(response.status).to.equal(404);
       expect(response.body.success).to.be.false;
-      expect(response.body.message).to.equal('Todo with id: 999999 does not exist');
+      expect(response.body.message).to.equal(`Todo with id: ${nonexistentId} does not exist`);
     });
   });
 });
