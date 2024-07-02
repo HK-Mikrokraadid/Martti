@@ -16,11 +16,15 @@ const getAll = async (req, res, next) => {
 const getById = async (req, res, next) => {
   try {
     const id = Number(req.params.id);
-    // throw new Error('Something something');
     const todo = await todosService.getById(id);
     if (!todo) {
       const error = new Error(`Todo with id: ${id} does not exist`);
       error.code = 404;
+      throw error;
+    }
+    if (todo.user_id !== res.locals.id) {
+      const error = new Error('You are not authorized to do this operation');
+      error.code = 403;
       throw error;
     }
     return res.status(200).json({
@@ -50,8 +54,6 @@ const create = async (req, res, next) => {
     };
     const id = await todosService.create(newTodo);
     if (!id) {
-      // Server errori puhul ei pea me koodi ja teadet lisama,
-      // kuna need on errorHandleris juba olemas
       throw new Error();
     }
     return res.status(201).json({
