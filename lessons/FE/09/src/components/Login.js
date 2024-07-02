@@ -1,8 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Form, Button, Container, Row, Col, Card } from 'react-bootstrap';
+import { Form, Button, Container, Row, Col, Card, Alert } from 'react-bootstrap';
 import axios from 'axios';
-import { jwtDecode } from 'jwt-decode';
 import { AuthContext } from './AuthContext';
 
 const Login = () => {
@@ -22,15 +21,21 @@ const Login = () => {
       // localStorage.setItem('user', JSON.stringify(user));
       // localStorage.setItem('token', response.data.token);
       contextLogin(response.data.token);
-      setMessage('Oled edukalt sisse loginud');
+      setMessage({
+        message: 'Oled edukalt sisse loginud',
+        variant: 'success',
+      });
       setTimeout(() => {
         setMessage(null);
         navigate('/');
       }, 2000);
     } catch (error) {
       console.log(error);
-      setMessage(error.response.data.message);
-      setLogin({ ...login, password: ''  });
+      setMessage({
+        message: error.response.data.message,
+        variant: 'danger',
+      });
+      setLogin({ ...login, password: '' });
       setTimeout(() => {
         setMessage(null);
       }, 5000);
@@ -83,7 +88,8 @@ const Login = () => {
                   Logi sisse
                 </Button>
               </Form>
-              {message && <div>{message}</div>}
+              
+              {message && <Alert variant={message.variant} className="mt-3">{message.message}</Alert>}
             </Card.Body>
           </Card>
         </Col>
