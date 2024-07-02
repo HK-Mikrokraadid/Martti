@@ -11,6 +11,7 @@ const PostPage = () => {
   const [post, setPost] = useState(null);
   const [loading, setLoading] = useState(false);
   const [showEditModal, setShowEditModal] = useState(false);
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [editPost, setEditPost] = useState({ title: '', body: '' });
   const [message, setMessage] = useState(null);
 
@@ -81,14 +82,35 @@ const PostPage = () => {
           Authorization: `Bearer ${token}`,
         },
       });
+      setMessage({
+        message: 'Post deleted successfully',
+        variant: 'success',
+      });
+      setTimeout(() => {
+        setMessage(null);
+        setShowDeleteModal(false);
+        navigate('/posts');
+      }, 2000);
     } catch (error) {
       console.log(error);
+      setMessage({
+        message: error.response.data.message,
+        variant: 'danger',
+      });
+      setTimeout(() => {
+        setMessage(null);
+        setShowDeleteModal(false);
+      }, 2000);
     }
   };
 
   const openEditModal = () => {
     setEditPost({ title: post.title, body: post.body });
     setShowEditModal(true);
+  };
+
+  const openDeleteModal = () => {
+    setShowDeleteModal(true);
   };
 
   if (loading) {
@@ -115,7 +137,7 @@ const PostPage = () => {
           <Card.Subtitle className="mb-2 text-muted">{ `${post.firstName} ${post.lastName}` }</Card.Subtitle>
           <Card.Text>{ post.body }</Card.Text>
             <Button variant="primary" onClick={openEditModal}>Edit</Button>
-            <Button variant="danger" onClick={handleDelete} className="ms-2">Delete</Button>
+            <Button variant="danger" onClick={openDeleteModal} className="ms-2">Delete</Button>
         </Card.Body>
       </Card>
 
@@ -152,6 +174,23 @@ const PostPage = () => {
             </Button>
           </Form>
         </Modal.Body>
+      </Modal>
+      <Modal show={showDeleteModal} onHide={() => setShowDeleteModal(false)}>
+        <Modal.Header closeButton>
+          <Modal.Title>Confirm Delete</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          {message && <Alert variant={message.variant}>{message.message}</Alert>}
+          {!message && 'Are you sure you want to delete this post?'}
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={() => setShowDeleteModal(false)}>
+            Cancel
+          </Button>
+          <Button variant="danger" onClick={handleDelete}>
+            Delete
+          </Button>
+        </Modal.Footer>
       </Modal>
     </Container>
   );
