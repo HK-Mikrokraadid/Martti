@@ -36,10 +36,8 @@ const Posts = () => {
   return (
     <Container>
       <Row>
-        <Col>
-          <h1 className="display-4">Posts</h1>
-          <p>Kokku on {posts.length} postitust</p>
-        </Col>
+        <h1 className="display-4">Posts</h1>
+        <p>Kokku on {posts.length} postitust</p>
       </Row>
       <Row>
         {posts.map((post) => (

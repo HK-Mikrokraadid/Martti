@@ -4,10 +4,9 @@ import { Form, Button, Container, Row, Col, Alert } from 'react-bootstrap';
 import axios from 'axios';
 import config from '../config';
 
-const AddPost = ({ onPostAdded }) => {
+const AddPost = () => {
   const [post, setPost] = useState({ title: '', body: '' });
-  const [error, setError] = useState('');
-  const [success, setSuccess] = useState('');
+  const [message, setMessage] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -19,11 +18,14 @@ const AddPost = ({ onPostAdded }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError('');
-    setSuccess('');
-
     if (!post.title || !post.body) {
-      setError('Both title and body are required');
+      setMessage({
+        message: 'Both title and body are required',
+        variant: 'danger',
+      });
+      setTimeout(() => {
+        setMessage(null);
+      }, 2000);
       return;
     }
 
@@ -35,21 +37,30 @@ const AddPost = ({ onPostAdded }) => {
         },
       });
       const id = response.data.id;
-      setSuccess(`Post added successfully with id ${id}`);
-      setPost({ title: '', body: '' });
-      onPostAdded(response.data);
+      setMessage({
+        message: `Post added successfully with id ${id}`,
+        variant: 'success',
+      });
+      setTimeout(() => {
+        setMessage(null);
+        setPost({ title: '', body: '' });
+      }, 2000);
     } catch (err) {
-      setError('An error occurred while adding the post');
+      setMessage({
+        message: err.response.data.message,
+        variant: 'danger',
+      });
+      setTimeout(() => {
+        setMessage(null);
+      }, 2000);
     }
   };
 
   return (
     <Container>
-      <Row className="justify-content-md-center">
-        <Col md={6}>
-        <h1 className="display-4">Posts</h1>
-          {error && <Alert variant="danger">{error}</Alert>}
-          {success && <Alert variant="success">{success}</Alert>}
+      <Row>
+        <h1 className="display-4">Add post</h1>
+          {message && <Alert variant={message.variant}>{message.message}</Alert>}
           <Form onSubmit={handleSubmit}>
             <Form.Group controlId="formTitle">
               <Form.Label>Title</Form.Label>
@@ -76,7 +87,6 @@ const AddPost = ({ onPostAdded }) => {
               Add Post
             </Button>
           </Form>
-        </Col>
       </Row>
     </Container>
   );
