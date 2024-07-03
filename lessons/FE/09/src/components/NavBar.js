@@ -30,12 +30,14 @@ function NavBar() {
           <Nav className='ml-auto'>
             {user ? (
               <>
-                <Nav.Link>E-mail: {user.email}</Nav.Link>
-                <Nav.Link>Roll: {user.role}</Nav.Link>
+                <Nav.Link as={Link} to={`/users/${user.id}`}>Account</Nav.Link>
                 <Logout />
               </>
             ) : (
-              <Nav.Link as={Link} to='/login'>Login</Nav.Link>
+              <>
+                <Nav.Link as={Link} to='/register'>Register</Nav.Link>
+                <Nav.Link as={Link} to='/login'>Login</Nav.Link>
+              </>
             )}
           </Nav>
         </Navbar.Collapse>

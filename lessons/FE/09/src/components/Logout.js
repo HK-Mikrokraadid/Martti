@@ -13,7 +13,7 @@ const Logout = () => {
   };
 
   return (
-      <Button onClick={logout} variant='primary' size='sm'>Logout</Button>
+    <Button onClick={logout} variant='primary' size='sm'>Logout</Button>
   );
 };
 

@@ -10,6 +10,8 @@ import Users from './components/Users';
 import NotFound from './components/NotFound';
 import NavBar from './components/NavBar';
 import AddPost from './components/AddPost';
+import RegisterUser from './components/RegisterUser';
+import User from './components/User';
 import AuthProvider from './components/AuthContext';
 
 function App() {
@@ -26,6 +28,8 @@ function App() {
             <Route path='/posts/add' element={<AddPost />} />
             <Route path='/posts/:id' element={<PostPage />} />
             <Route path='/users' element={<Users />} />
+            <Route path='/users/:id' element={<User />} />
+            <Route path='/register' element={<RegisterUser />} />
             <Route path='*' element={<NotFound />} />
           </Routes>
         </Router>
