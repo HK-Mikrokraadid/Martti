@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Container, Card, Button, Modal, Form, Alert } from 'react-bootstrap';
+import Comments from './Comments';
 import config from '../config';
 
 const PostPage = () => {
@@ -192,6 +193,7 @@ const PostPage = () => {
           </Button>
         </Modal.Footer>
       </Modal>
+      <Comments postId={id} />
     </Container>
   );
 };
