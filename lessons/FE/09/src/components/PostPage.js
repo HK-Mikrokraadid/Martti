@@ -5,6 +5,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { Container, Card, Button, Modal, Form, Alert } from 'react-bootstrap';
 import Comments from './Comments';
 import config from '../config';
+import formatDate from '../utils/formatDate';
 
 const PostPage = () => {
   const navigate = useNavigate();
@@ -26,6 +27,7 @@ const PostPage = () => {
         },
       });
       setPost(response.data.post);
+      console.log(response.data.post);
       setLoading(false);
     } catch (error) {
       setLoading(false);
@@ -136,6 +138,7 @@ const PostPage = () => {
         <Card.Body>
           <Card.Title>{ post.title }</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">{ `${post.firstName} ${post.lastName}` }</Card.Subtitle>
+          <Card.Subtitle className="mb-2 text-muted">{ formatDate(post.created_at) }</Card.Subtitle>
           <Card.Text>{ post.body }</Card.Text>
             <Button variant="primary" onClick={openEditModal}>Edit</Button>
             <Button variant="danger" onClick={openDeleteModal} className="ms-2">Delete</Button>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import formatDate from '../utils/formatDate';
 
 const Post = (props) => {
   return (
@@ -9,7 +10,7 @@ const Post = (props) => {
         <Card.Title>
           <Link to={`/posts/${props.id}`} className="text-decoration-none">{props.title} - id: {props.id}</Link>
         </Card.Title>
-        <Card.Subtitle className="mb-2 text-muted">{props.createdAt} by {props.author}</Card.Subtitle>
+        <Card.Subtitle className="mb-2 text-muted">{formatDate(props.created_at)} by {props.author}</Card.Subtitle>
         <Card.Text>{props.body}</Card.Text>
       </Card.Body>
     </Card>

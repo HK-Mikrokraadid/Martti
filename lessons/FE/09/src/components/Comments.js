@@ -1,24 +1,25 @@
 // Comments.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Card, ListGroup, Form, Button } from 'react-bootstrap';
+import { Card, ListGroup, Form, Button, Alert } from 'react-bootstrap';
 import config from '../config';
+import formatDate from '../utils/formatDate';
 
-const Comments = ({ postId }) => {
+const Comments = (props) => {
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState({ name: '', email: '', body: '' });
-  const [error, setError] = useState('');
-  const [success, setSuccess] = useState('');
+  const [message, setMessage] = useState(null);
 
   const fetchComments = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get(`${config.API_URL}/posts/${postId}/comments`, {
+      const response = await axios.get(`${config.API_URL}/posts/${props.postId}/comments`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
       setComments(response.data.comments);
+      console.log(response.data.comments);
     } catch (error) {
       console.log(error);
     }
@@ -26,7 +27,7 @@ const Comments = ({ postId }) => {
 
   useEffect(() => {
     fetchComments();
-  }, [postId]);
+  }, [props.postId]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -38,26 +39,33 @@ const Comments = ({ postId }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError('');
-    setSuccess('');
 
     if (!newComment.name || !newComment.email || !newComment.body) {
-      setError('All fields are required');
+      setMessage({
+        message: 'All fields are required',
+        variant: 'danger',
+      });
       return;
     }
 
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.post(`${config.API_URL}/posts/${postId}/comments`, newComment, {
+      await axios.post(`${config.API_URL}/comments`, { ...newComment, postId: props.postId}, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
-      setSuccess('Comment added successfully!');
+      setMessage({
+        message: 'Comment added successfully',
+        variant: 'success',
+      });
       setNewComment({ name: '', email: '', body: '' });
-      setComments([response.data.comment, ...comments]);
+      fetchComments();
     } catch (error) {
-      setError('An error occurred while adding the comment');
+      setMessage({
+        message: error.response.data.message,
+        variant: 'danger',
+      });
     }
   };
 
@@ -69,14 +77,14 @@ const Comments = ({ postId }) => {
           {comments.map((comment) => (
             <ListGroup.Item key={comment.id}>
               <h5>{comment.name}</h5>
+              <small className="text-muted">{formatDate(comment.created_at)}</small>
               <p>{comment.body}</p>
               <small className="text-muted">{comment.email}</small>
             </ListGroup.Item>
           ))}
         </ListGroup>
         <h5 className="mt-4">Add a Comment</h5>
-        {error && <p className="text-danger">{error}</p>}
-        {success && <p className="text-success">{success}</p>}
+        { message && <Alert variant={message.variant}>{message.message}</Alert>}
         <Form onSubmit={handleSubmit}>
           <Form.Group controlId="formName">
             <Form.Label>Name</Form.Label>

@@ -47,7 +47,7 @@ const Posts = () => {
             title={post.title}
             body={post.content}
             author={`${post.firstName} ${post.lastName}`}
-            createdAt={post.created_at}
+            created_at={post.created_at}
           />
         ))}
       </Row>
