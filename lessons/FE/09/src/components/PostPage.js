@@ -27,7 +27,6 @@ const PostPage = () => {
         },
       });
       setPost(response.data.post);
-      console.log(response.data.post);
       setLoading(false);
     } catch (error) {
       setLoading(false);
@@ -136,8 +135,8 @@ const PostPage = () => {
     <Container className="my-5">
       <div className="mb-4">
         <h1 className="display-4">{post.title}</h1>
-        <div className="text-muted mb-2">{`${post.firstName} ${post.lastName}`}</div>
-        <div className="text-muted mb-4">{formatDate(post.created_at)}</div>
+        <div className="text-muted mb-2">{`Author: ${post.firstName} ${post.lastName}`}</div>
+        <div className="text-muted mb-4">{`Created: ${formatDate(post.created_at)}`}</div>
         <p className="lead">{post.body}</p>
         <div className="mt-3">
           <Button variant="primary" onClick={openEditModal}>Edit</Button>
@@ -173,7 +172,7 @@ const PostPage = () => {
                 onChange={handleEditChange}
               />
             </Form.Group>
-            <Button variant="primary" type="submit" className='mt-2'>
+            <Button disabled={message} variant="primary" type="submit" className='mt-2'>
               Save Changes
             </Button>
           </Form>
@@ -188,10 +187,10 @@ const PostPage = () => {
           {!message && 'Are you sure you want to delete this post?'}
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={() => setShowDeleteModal(false)}>
+          <Button disabled={message} variant="secondary" onClick={() => setShowDeleteModal(false)}>
             Cancel
           </Button>
-          <Button variant="danger" onClick={handleDelete}>
+          <Button disabled={message} variant="danger" onClick={handleDelete}>
             Delete
           </Button>
         </Modal.Footer>

@@ -19,7 +19,6 @@ const Comments = (props) => {
         },
       });
       setComments(response.data.comments);
-      console.log(response.data.comments);
     } catch (error) {
       console.log(error);
     }
