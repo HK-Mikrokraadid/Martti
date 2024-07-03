@@ -134,16 +134,16 @@ const PostPage = () => {
 
   return (
     <Container className="my-5">
-      <Card>
-        <Card.Body>
-          <Card.Title>{ post.title }</Card.Title>
-          <Card.Subtitle className="mb-2 text-muted">{ `${post.firstName} ${post.lastName}` }</Card.Subtitle>
-          <Card.Subtitle className="mb-2 text-muted">{ formatDate(post.created_at) }</Card.Subtitle>
-          <Card.Text>{ post.body }</Card.Text>
-            <Button variant="primary" onClick={openEditModal}>Edit</Button>
-            <Button variant="danger" onClick={openDeleteModal} className="ms-2">Delete</Button>
-        </Card.Body>
-      </Card>
+      <div className="mb-4">
+        <h1 className="display-4">{post.title}</h1>
+        <div className="text-muted mb-2">{`${post.firstName} ${post.lastName}`}</div>
+        <div className="text-muted mb-4">{formatDate(post.created_at)}</div>
+        <p className="lead">{post.body}</p>
+        <div className="mt-3">
+          <Button variant="primary" onClick={openEditModal}>Edit</Button>
+          <Button variant="danger" onClick={openDeleteModal} className="ms-2">Delete</Button>
+        </div>
+      </div>
 
       <Modal show={showEditModal} onHide={() => setShowEditModal(false)}>
         <Modal.Header closeButton>
