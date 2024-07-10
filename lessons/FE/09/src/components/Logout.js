@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
-import { Button } from 'react-bootstrap';
+import { NavDropdown } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from './AuthContext';
 
@@ -13,7 +14,7 @@ const Logout = () => {
   };
 
   return (
-    <Button onClick={logout} variant='primary' size='sm'>Logout</Button>
+    <NavDropdown.Item as={Link} onClick={logout} >Logout</NavDropdown.Item>
   );
 };
 

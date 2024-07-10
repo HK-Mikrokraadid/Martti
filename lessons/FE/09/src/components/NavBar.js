@@ -1,8 +1,9 @@
 import React, { useEffect, useContext } from 'react';
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Container, Nav, Navbar, NavDropdown, Image } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Logout from './Logout';
 import { AuthContext } from './AuthContext';
+import authorImage from '../images/Author.jpg';
 
 function NavBar() {
   const { user } = useContext(AuthContext);
@@ -27,12 +28,20 @@ function NavBar() {
             }
             <Nav.Link as={Link} to='/about'>About</Nav.Link>
           </Nav>
-          <Nav className='ml-auto'>
+          <Nav className="ml-auto">
             {user ? (
-              <>
-                <Nav.Link as={Link} to={`/users/${user.id}`}>Account</Nav.Link>
+              <NavDropdown 
+                title={<Image src={authorImage} roundedCircle width="40" height="40" />}
+                id="collapsible-nav-dropdown"
+                alignRight
+              >
+                <NavDropdown.Item>{user.email}</NavDropdown.Item>
+                <NavDropdown.Item>Role: {user.role}</NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item as={Link} to={`/users/${user.id}`}>Account</NavDropdown.Item>
+                <NavDropdown.Divider />
                 <Logout />
-              </>
+              </NavDropdown>
             ) : (
               <>
                 <Nav.Link as={Link} to='/register'>Register</Nav.Link>
